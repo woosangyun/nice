@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>NICE정보통신 투자정보-재무정보</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta http-equiv="keywords" content="" />
+<meta http-equiv="description" content="" />
+<link href="../css/common.css" rel="stylesheet" type="text/css">
+<link href="../css/sub.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+<!--[if lt IE 9]>
+      <script type="text/javascript" src="../js/respond.js"></script>
+      <script type="text/javascript" src="../js/selectivizr.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/sub.js"></script>
+<script type="text/javascript">
+	
+	var m0 = 2;
+	var m1 = 1;
+	//var m2 = 0;
+	//var s = 0;
+
+</script>
+</head>
+<body class="stock">
+<div id="wrapper">
+    <div id="gnb"></div>
+    <div id="visual">
+        <p class="eng">FINANCIAL INFORMATION</p>
+        <p class="kor">재무정보</p>
+    </div>
+    <div id="container">
+        <div class="contents">
+        	<div id="lnb">
+                <a href="../00_main/index.html" class="home">메인으로 이동</a>
+        	</div>
+            <h2>재무정보</h2>
+            <h3>
+				요약 재무상태표
+				<p class="right">(단위 : 백만원)</p>
+			</h3>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mt30">
+                <colgroup>
+                    <col width="25%" /><col width="25%" /><col width="25%" /><col width="25%" /><col width="25%" />
+                </colgroup>                
+                <thead>
+                	<tr>
+                        <th scope="col" class="bdBottom">계정</th>
+                        <th scope="col" class="gray">2014년</th>
+                        <th scope="col" class="gray">2015년</th>
+                        <th scope="col" class="gray">2016년(연결)</th>
+                        <th scope="col" class="gray">2017년(연결)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="bdBottom">유동자산</th>
+                        <td class="center">199,724</td>
+                        <td class="center">204,381</td>
+                        <td class="center">281,793</td>
+                        <td class="center">395,946</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom">비유동자산</th>
+                        <td class="center">46,364</td>
+                      <td class="center">86,555</td>
+                        <td class="center">95,139</td>
+                        <td class="center">98,251</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom blue">자산총계</th>
+                        <td class="center blue bold">246,088</td>
+                      <td class="center blue bold">290,935</td>
+                        <td class="center blue bold">376,933</td>
+                        <td class="center blue bold">494,197</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom">유동부채</th>
+                        <td class="center">148,413</td>
+                      <td class="center">166,098</td>
+                        <td class="center">224,193</td>
+                        <td class="center">312,903</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom">비유동부채</th>
+                        <td class="center">1,912</td>
+                      <td class="center">876</td>
+                        <td class="center">990</td>
+                        <td class="center">650</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom blue">부채총계</th>
+                        <td class="center blue bold">150,325</td>
+                      <td class="center blue bold">166,974</td>
+                        <td class="center blue bold">225,184</td>
+                        <td class="center blue bold">313,554</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom">자본금</th>
+                        <td class="center">5,000</td>
+                        <td class="center">5,000</td>
+                        <td class="center">5,000</td>
+                        <td class="center">5,000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom">기타불입자본</th>
+                        <td class="center">5,113</td>
+                        <td class="center">5,113</td>
+                        <td class="center">5,113</td>
+                        <td class="center">177</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom">기타자본구성요소</th>
+                        <td class="center">-</td>
+                        <td class="center">-19</td>
+                        <td class="center">37</td>
+                        <td class="center">75</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom">이익잉여금</th>
+                        <td class="center">85,650</td>
+                      <td class="center">113,868</td>
+                        <td class="center">141,599</td>
+                        <td class="center">174,454</td>
+                    </tr>
+					<tr>
+                        <th scope="row" class="bdBottom">비지배지분</th>
+                        <td class="center">95,763</td>
+                        <td class="center">-</td>
+                        <td class="center">-</td>
+                        <td class="center">937</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom blue">자본총계</th>
+                       <td class="center blue bold">95,763</td>
+                      <td class="center blue bold">123,961</td>
+                        <td class="center blue bold">151,749</td>
+                        <td class="center blue bold">180,644</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>요약 손익계산서 <p class="right">(단위 : 백만원)</p></h3>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mt30">
+                <colgroup>
+                    <col width="25%" /><col width="25%" /><col width="25%" /><col width="25%" /><col width="25%" />
+                </colgroup>                
+                <thead>
+                	<tr>
+                        <th scope="col" class="bdBottom">계정</th>
+                         <th scope="col" class="gray">2014년</th>
+                        <th scope="col" class="gray">2015년</th>
+                        <th scope="col" class="gray">2016년(연결)</th>
+                        <th scope="col" class="gray">2017년(연결)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="bdBottom">매출액</th>
+                        <td class="center">225,517</td>
+                      <td class="center">263,883</td>
+                        <td class="center">317,066</td>
+                        <td class="center">366,437</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom">매출원가</th>
+                        <td class="center">171,403</td>
+                      <td class="center">181,424</td>
+                        <td class="center">210,994</td>
+                        <td class="center">249,994</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom">매출총이익</th>
+                        <td class="center">54,113</td>
+                      <td class="center">76,459</td>
+                        <td class="center">106,072</td>
+                        <td class="center">116,443</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom blue">영업이익</th>
+                        <td class="center blue bold">21,230</td>
+                      <td class="center blue bold">34,161</td>
+                        <td class="center blue bold">47,210</td>
+                        <td class="center blue bold">43,124 </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom">법인세비용</th>
+                        <td class="center">8,249</td>
+                      <td class="center">8,652</td>
+                        <td class="center">10,651</td>
+                        <td class="center">12,165</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="bdBottom blue">당기순이익</th>
+                        <td class="center blue bold">29,975</td>
+                      <td class="center blue bold">30,525</td>
+                        <td class="center blue bold">30,315</td>
+                        <td class="center blue bold">36,577</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="footer"></div>
+</body>
+</html>

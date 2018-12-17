@@ -1,0 +1,129 @@
+A:link {color:7f7f7f; text-decoration:none;}
+A:visited	{color:7f7f7f; text-decoration:none;}
+A:hover 	{color:009BB7; text-decoration:none;}
+
+
+body { font-family: "돋음"; color:333333; font-size: 12px; scrollbar-3dlight-color:#F5F5F5;
+scrollbar-arrow-color:#003300;
+scrollbar-track-color:#F5F5F5;
+scrollbar-darkshadow-color:#F5F5F5;
+scrollbar-face-color:;
+scrollbar-highlight-color:;
+scrollbar-shadow-color:} 
+
+td  { font-family: "돋움" ; color:#7f7f7f; font-size: 12px; line-height:18px;}
+.td_01  { font-family: "돋움" ; color:#7f7f7f; font-size: 12px; line-height:18px; text-indent:5px; text-align:justify;  }
+
+/*왼쪽 들여쓰기*/
+.space {
+   padding-left:5px;
+}
+   
+/*위아래 양쪽 공간두기*/
+.blank { font-family:"돋음"; color:555555; font-size: 12px; line-height:16px; padding-left:10; padding-top:10; padding-right:10;padding-bottom:10; }
+
+
+/*bold text color*/
+.text_lgtel {font-family: "돋움"; font-size: 12px; color: #528A91;}
+.text_alt {font-family: "돋움"; font-size: 12px; color: #4D4D4D;line-height:12px;}
+.text_align { font-family: "Verdana","돋음"; font-size: 11px;   text-align: " " justify; } 
+.text_01 { font-family: "Verdana","돋음"; font-size: 9px;   text-align: " " justify; } 
+ .text_02 { font-family: "Verdana","돋음"; font-size: 12px;   text-align: " " justify; } 
+  .text_03 { font-family: "Dotum","Dotumche" ;    FONT-SIZE: 12px; COLOR: #7f7f7f;    text-align: " " justify; } 
+ <font style="font-family:Tahoma,Verdana,Arial;font-size:8pt;color:333333;">
+ 
+ /*제품타이틀*/
+ .pro_01 { color:#000000; font-family: Gulim, 돋움, Tahoma, Seoul; font-size:14px; font-weight: bold; line-height : 18px;}
+ 
+ /*Product search*/
+ .prod_search_input {
+	border-left: #BEBEBE 1px solid; border-top: #BEBEBE 1px solid; border-right: #BEBEBE 1px solid; border-bottom: #BEBEBE 1px solid; height: 20px; background-color: #FFFFFF; color: #333333; font-size: 12px;
+}
+.product_input {
+	border-left: #E2E2E2 1px solid; border-top: #E2E2E2 1px solid; border-right: #E2E2E2 1px solid; border-bottom: #E2E2E2 1px solid; height: 17px; background-color: #F5F5F5; color: #305B81; font-size: 12px;
+}
+.product_searchform {
+	border-right: #E2E2E2 1px solid; border-top: #E2E2E2 1px solid; border-left: #E2E2E2 1px solid; border-bottom: #E2E2E2 1px solid; width: 125px; height: 17px; background-color: #F5F5F5; color: #333333; font-family: 돋움;
+}
+.product_searchform_on {
+	border-right: #E2E2E2 1px solid; border-top: #E2E2E2 1px solid; border-left: #E2E2E2 1px solid; border-bottom: #E2E2E2 1px solid; width: 125px; height: 17px; background-color: #FFFFFF; color: #333333; font-family: 돋움;
+}
+.research_etc {
+	border-right: #E2E2E2 1px solid; border-top: #E2E2E2 1px solid; border-left: #E2E2E2 1px solid; border-bottom: #E2E2E2 1px solid; width: 250px; height: 17px; background-color: #FFFFFF; color: #333333; font-family: 돋움;
+}
+
+ 
+  /* 조직도텍스트 */ 
+ .or01 { color:#737373; font-family:돋움; font-size:11px;  line-height:16px;}
+   
+   
+   /* 채용텍스트 */ 
+.re01 { color:#666666; font-family:돋움; font-size:12px;  line-height:16px;}
+
+ 
+ /*SELECT 폼 셀렉트 폼 스타일 */ 
+ 
+ .select {border-style:solid;border-width:1px;border-color:cccccc;color:333333;background-color:89ACB5;color:333333; font-family: "Verdana","돋음";  font-size: 5px;   text-align: " " justify;}
+ .select_01 {border-style:solid;border-width:1px;border-color:cccccc;color:333333;background-color:ffffff;color:333333; font-family: "Verdana","돋음";  font-size: 11px;   text-align: " " justify;}
+.select02 {border-style:solid;border-width:1px;border-color:cccccc;color:333333;background-color:ffffff;color:939393; font-family: "Tahoma";  font-size: 10px;   text-align: " " justify;}  
+
+
+
+ /*INPUT 박스 */ 
+
+.inputbox {BACKGROUND-COLOR: #F8F8F8; BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid; 	BORDER-TOP: #cccccc 1px solid; COLOR: #777777; font-family:"Verdana","돋음"; color:555555; font-size: 11px/12px; padding-left:3px}
+.pointbox {BACKGROUND-COLOR: #FAFAFA;BORDER-BOTTOM: #B0B0B0 1px dotted; BORDER-LEFT: #B0B0B0 1px dotted; BORDER-RIGHT: #B0B0B0 1px dotted; BORDER-TOP: #B0B0B0 1px dotted; COLOR: #777777;font-family:"Verdana","돋음"; color:555555; font-size: 11px/12px;}
+.backimg {BORDER-BOTTOM: #B0B0B0 1px solid; BORDER-LEFT: #B0B0B0 1px solid;margin-left:5; BORDER-RIGHT: #B0B0B0 1px solid; 	BORDER-TOP: #B0B0B0 1px solid; COLOR: #777777; font-family:"Verdana","돋음"; color:555555; font-size: 11px/12px; background:url(slogo.gif) no-repeat fixed left; padding-left:20; height:19px; }
+
+
+
+
+ /*TEXTARA 라인 표현 */ 
+.contents {BACKGROUND-COLOR: #FAFAFA; font-family:"Verdana","돋음"; color:555555; font-size: 11px/12px; border-style:solid;border-width:1px;border-color:cccccc;}
+
+/*
+.contents {BACKGROUND-COLOR: #FAFAFA; font-family:"Verdana","돋음"; color:555555; font-size: 11px/12px; border-style:solid;border-width:1px;margin-left:5;border-color:cccccc;}
+*/
+
+
+ /*TEXTARA 점선 표현 */ 
+.contents2 {font-family:"Verdana","돋음"; color:555555; font-size: 11px/12px; border-style:dotted;border-width:1px;margin-left:5;border-color:cccccc;color:333333;background-color:none;}
+
+ 
+
+
+
+
+
+ /*IMG 텍스트정리 웹진형  */ 
+
+IMG.a {margin-bottom:5px; margin-right:10px ;border: none;	}
+IMG.b {margin-bottom:10px; margin-right:10px ;border: none;	}
+
+
+
+
+
+/*table line(a-상단2라인,b-가운데라인,c-하단라인 */
+
+
+.table_a		{
+	font-family:"돋움";
+	font-size:11px;
+	color:555555;
+	background-image:   url(logo.gif);
+	background-repeat: repeat-x;
+	height: 31px;
+	text-align: left;
+	padding: 5px;
+
+}
+
+
+
+
+/*대리점 팝업창 작은 텍스트*/
+
+ .pop_text { font-family: "돋음"; font-size: 11px;   text-align: " " justify; } 
+
+</font>
