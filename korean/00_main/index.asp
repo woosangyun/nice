@@ -356,7 +356,7 @@
     cookiedata = document.cookie;
     
     var sdate= new Date("2018/12/21 00:00:00");//시작날짜
-    var edate= new Date("2018/12/25 00:00:00");//종료날짜
+    var edate= new Date("2018/12/27 00:00:00");//종료날짜
     
     if ( cookiedata.indexOf("maindiv=done") < 0 ){
         if(Date.now() >= sdate && Date.now() <= edate){
