@@ -337,7 +337,7 @@
 <div id="layer_popup">
     <div class="wrapper">
         <div class="conWrap">
-            <img src="../images/popup/popup_181218.png" alt="나이스정보통신(주)는 전기통신사업법 위반을 이유로 시정명을 받은 사실이 있음">
+            <img src="../images/popup/popup_190705.png" alt="전자증권 전환대상 주권 등의 권리자 보호 안내">
 			<div class="close">
 				<form name="pop_form">
 					<div id="check"><input type="checkbox" name="chkbox" value="checkbox"> 오늘하루 보지 않기</div>
@@ -351,7 +351,7 @@
 <!-- 레이어팝업 내용 end -->
     
 <!--레이어팝업 닫기 스크립트 start-->
-<script language="Javascript">
+<!--<script language="Javascript">
     
     cookiedata = document.cookie;
     
@@ -368,7 +368,7 @@
     else {
         document.all['layer_popup'].style.visibility = "hidden"; 
     }
-</script>
+</script>-->
 <!--레이어팝업 닫기 스크립트 end-->
 
 
