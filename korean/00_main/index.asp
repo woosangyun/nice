@@ -351,12 +351,12 @@
 <!-- 레이어팝업 내용 end -->
     
 <!--레이어팝업 닫기 스크립트 start-->
-<!--<script language="Javascript">
+<script language="Javascript">
     
     cookiedata = document.cookie;
     
     var sdate= new Date("2018/12/21 00:00:00");//시작날짜
-    var edate= new Date("2018/12/27 00:00:00");//종료날짜
+    var edate= new Date("2019/09/12 00:00:00");//종료날짜
     
     if ( cookiedata.indexOf("maindiv=done") < 0 ){
         if(Date.now() >= sdate && Date.now() <= edate){
@@ -368,7 +368,7 @@
     else {
         document.all['layer_popup'].style.visibility = "hidden"; 
     }
-</script>-->
+</script>
 <!--레이어팝업 닫기 스크립트 end-->
 
 

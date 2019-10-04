@@ -216,29 +216,15 @@
 <!-- 레이어팝업 내용 start--->
 <div id="layer_popup">
     <div class="wrapper">
-        <div class="title">
-            NICE정보통신
-        </div>
         <div class="conWrap">
-            <div class="text">
-                안녕하세요. 나이스정보통신㈜입니다. 
-            </div>
-            <ul class="buList">
-                <li>여신전문금융업법(제19조제3항)에 따라 신용카드 가맹점은 2018년 7월 20일까지 신용카드 단말기를 금융위원회 등록 단말기로 업그레이드 또는 교체하여야 합니다.  </li>
-                <li>이를 위반한 경우(2018년 7월 21일 이후 미등록단말기 사용) 7월 21일 00시부터 신용카드 거래가 중단되며, 여신전문금융업법 (제72조1항)에 따라 5천만원 이하의 과태료가 부과될 수 있습니다.</li>
-                <li>다만, 부득이한 사유로 2018년 7월 20일까지 등록단말기 전환이 불가능한 가맹점의 경우, 7월 20일까지 당사에 등록단말기 설치 신청한 경우에 한해 단말기 설치 전 까지 한시적으로 기존 단말기 사용이 가능하도록 조치하였습니다.</li>
-                <li>이미 신청하신 가맹점은 등록단말기 교체 및 업그레이드를 통해 신용카드 단말기 사용에 불편함이 없도록 조속히 관리대리점에 연락하여 주시기 바랍니다. </li>
-                 <li>앞으로도 귀 가맹점의 든든한 협력사로서 최선을 다하겠습니다.</li>
-            </ul>
-            <div class="text mt20">
-               감사합니다
-            </div> 
-            <div class="close">
-                <form name="pop_form">
-                <div id="check"><input type="checkbox" name="chkbox" value="checkbox"> 오늘하루 보지 않기</div>
-                <div id="close"><a href="javascript:closePop();"><img src="../images/etc/btn_close.png" alt="닫기"></a></div>            
-            </form>	
-            </div>
+            <img src="../images/popup/popup_190705.png" alt="전자증권 전환대상 주권 등의 권리자 보호 안내">
+			<div class="close">
+				<form name="pop_form">
+					<div id="check"><input type="checkbox" name="chkbox" value="checkbox"> 오늘하루 보지 않기</div>
+					<div id="close"><a href="javascript:closePop();"><img src="../images/etc/btn_close.png" alt="닫기"></a></div>
+				</form>	
+			</div>
+			
         </div>
     </div>
 </div>
@@ -246,13 +232,22 @@
 
 <!--레이어팝업 닫기 스크립트 start-->
 <script language="Javascript">
-  cookiedata = document.cookie;    
-  if ( cookiedata.indexOf("maindiv=done") < 0 ){      
-   document.all['layer_popup'].style.visibility = "visible";
-   } 
-   else {
-    document.all['layer_popup'].style.visibility = "hidden"; 
-  }
+    
+    cookiedata = document.cookie;
+    
+    var sdate= new Date("2018/12/21 00:00:00");//시작날짜
+    var edate= new Date("2019/07/05 00:00:00");//종료날짜
+    
+    if ( cookiedata.indexOf("maindiv=done") < 0 ){
+        if(Date.now() >= sdate && Date.now() <= edate){
+            document.all['layer_popup'].style.visibility = "visible";
+        }else{
+            document.all['layer_popup'].style.visibility = "hidden"; 
+        }
+    } 
+    else {
+        document.all['layer_popup'].style.visibility = "hidden"; 
+    }
 </script>
 <!--레이어팝업 닫기 스크립트 end-->
 
