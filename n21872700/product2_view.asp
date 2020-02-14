@@ -42,7 +42,7 @@
 
 <%
 	sql="select"
-	sql=sql & "		p_div, p_title, p_file_idx, p_file_name, p_content, p_comment, p_link, p_certify, p_order"
+	sql=sql & "		p_div, p_title, p_file_idx, p_file_name, p_content, p_comment, p_link, p_certify, p_order, p_div2"
 	sql=sql & " ,	(select x_file from nc_file where idx=a.p_file_idx) as x_file"
 	sql=sql & " from nc_product2 a"
 	sql=sql & " where p_display>0"
@@ -69,6 +69,7 @@
 			p_certify=rs("p_certify")
 			p_order=rs("p_order")
 			x_file=rs("x_file")
+			p_div2=rs("p_div2")
 
 			p_title=html_encode(p_title)
 
@@ -216,7 +217,7 @@
                                                       <div align="left"><strong><%= p_title %></strong></div>
                                                     </td>
                                                     <td width="88" height="27" > 
-                                                      <div align="center"><%= div_str %></div>
+                                                      <div align="center"><%= p_div2 %></div>
                                                     </td>
                                                     <td width="59" height="27"> 
                                                     <div align="center">

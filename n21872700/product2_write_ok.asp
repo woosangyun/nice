@@ -49,14 +49,14 @@
 			response.end
 		end if
 
-		if isnumeric(p_div)=false or isnumeric(p_certify)=false or isnumeric(p_order)=false then
-			response.write "<script>alert('파라미터 오류')</script>"
-			response.end
-		else
-			p_div=int(p_div)
-			p_certify=int(p_certify)
-			p_order=int(p_order)
-		end if
+		'if isnumeric(p_div)=false or isnumeric(p_certify)=false or isnumeric(p_order)=false then
+		'	response.write "<script>alert('파라미터 오류')</script>"
+		'	response.end
+		'else
+		'	p_div=int(p_div)
+		'	p_certify=int(p_certify)
+		'	p_order=int(p_order)
+		'end if
 	end if
 
 
@@ -130,13 +130,14 @@
 
 
 		sql="update nc_product2 set"
-		sql=sql & " p_div= ? "
+		sql=sql & " p_div2= ? "
 		sql=sql & " , p_title= ? "
 		sql=sql & " , p_content= ? "
 		sql=sql & " , p_comment= ? "
 		sql=sql & " , p_link= ? "
 		sql=sql & " , p_certify= ? "
 		sql=sql & " , p_order= ? "
+		sql=sql & " , p_div= (select idx from nc_category where c_category = '"&p_div&"' ) "
 
 		if x_idx>0 then
 			sql=sql & " , p_file_idx= ? "
@@ -151,7 +152,7 @@
 		cmd.commandtext=sql
 		cmd.commandtype=adCmdText
 		cmd.prepared=true
-		cmd.parameters.append cmd.createparameter("@p_div",adWChar,adParamInput,1,p_div)
+		cmd.parameters.append cmd.createparameter("@p_div",adWChar,adParamInput,255,p_div)
 		cmd.parameters.append cmd.createparameter("@p_title",adVarWChar,adParamInput,100,p_title)
 		cmd.parameters.append cmd.createparameter("@p_content",adVarWChar,adParamInput,20000,p_content)
 		cmd.parameters.append cmd.createparameter("@p_comment",adVarWChar,adParamInput,10000,p_comment)
@@ -181,7 +182,7 @@
 		set cmd=nothing
 
 
-		sql="insert nc_product2 (p_id,p_div,p_title,p_file_idx,p_file_name,p_content,p_comment,p_link,p_certify,p_order,p_ip) values (?,?,?,?,?,?,?,?,?,?,?)"
+		sql="insert nc_product2 (p_id,p_div2,p_title,p_file_idx,p_file_name,p_content,p_comment,p_link,p_certify,p_order,p_ip,p_div) values (?,?,?,?,?,?,?,?,?,?,?,(select idx from nc_category where c_category ='"&p_div&"' ))"
 
 		set cmd=server.createobject("adodb.command")
 		cmd.activeconnection=lo_DbCon
@@ -189,7 +190,7 @@
 		cmd.commandtype=adCmdText
 		cmd.prepared=true
 		cmd.parameters.append cmd.createparameter("@p_id",adVarWChar,adParamInput,12,current_id)
-		cmd.parameters.append cmd.createparameter("@p_div",adWChar,adParamInput,1,p_div)
+		cmd.parameters.append cmd.createparameter("@p_div2",adWChar,adParamInput,255,p_div)
 		cmd.parameters.append cmd.createparameter("@p_title",adVarWChar,adParamInput,100,p_title)
 		cmd.parameters.append cmd.createparameter("@x_idx",adInteger,adParamInput,4,x_idx)
 		cmd.parameters.append cmd.createparameter("@x_file",adVarWChar,adParamInput,255,x_file)

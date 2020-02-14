@@ -47,12 +47,43 @@
     </div>
     <div class="second"><a class="depth" style="cursor:pointer"></a>
         <ul>
-            <li><a href="../04_product/11.asp?div=1">Credit Card Checker(Wired)</a></li>
+             <%
+				Dim num : num = 0
+				sql="select"
+				sql=sql & "		idx, c_category, c_category_eng, c_order "
+				sql=sql & " from nc_category order by c_order asc "
+
+				set cmd=server.createobject("adodb.command")
+				cmd.activeconnection=lo_DbCon
+				cmd.commandtext=sql
+				cmd.commandtype=adCmdText
+				cmd.prepared=true
+
+				set rs=cmd.execute
+					if not rs.eof or rs.bof then
+						do until rs.eof
+						idx=rs("idx")
+						c_category=rs("c_category")
+						c_category_eng=rs("c_category_eng")
+						c_order=rs("c_order")
+			%>
+				<li><a href="../04_product/11.asp?div=<%=idx%>"><%=c_category_eng%></a></li>
+			<%
+							num=num+1
+							rs.movenext
+						loop
+					end if
+				set rs=nothing
+				set cmd=nothing
+			%>
+			<!--
+			<li><a href="../04_product/11.asp?div=1">Credit Card Checker(Wired)</a></li>
             <li><a href="../04_product/11.asp?div=2">Credit Card Checker(Wireless)</a></li>
             <li><a href="../04_product/11.asp?div=3">POS</a></li>
             <li><a href="../04_product/11.asp?div=4">MultiPad</a></li>
             <li><a href="../04_product/11.asp?div=5">SignaturePad</a></li>
             <li><a href="../04_product/11.asp?div=6">Others</a></li>
+			-->
         </ul>
     </div>
     <div class="second"><a class="depth" style="cursor:pointer"></a>
@@ -107,7 +138,7 @@
     </div>-->
 
 
-	<% for i=1 to 6 %>
+	<% for i=1 to num %>
     <div class="third"><a class="depth" style="cursor:pointer"></a>
         <ul>
 

@@ -42,12 +42,42 @@
     </div>
     <div class="second"><a class="depth" style="cursor:pointer"></a>
         <ul>
-            <li><a href="../04_product/11.asp?div=1">신용카드조회기(유선)</a></li>
+            <%
+				Dim num : num = 0
+				sql="select"
+				sql=sql & "		idx, c_category, c_order "
+				sql=sql & " from nc_category order by c_order asc "
+
+				set cmd=server.createobject("adodb.command")
+				cmd.activeconnection=lo_DbCon
+				cmd.commandtext=sql
+				cmd.commandtype=adCmdText
+				cmd.prepared=true
+
+				set rs=cmd.execute
+					if not rs.eof or rs.bof then
+						do until rs.eof
+						idx=rs("idx")
+						c_category=rs("c_category")
+						c_order=rs("c_order")
+			%>
+				<li><a href="../04_product/11.asp?div=<%=idx%>"><%=c_category%></a></li>
+			<%
+							num=num+1
+							rs.movenext
+						loop
+					end if
+				set rs=nothing
+				set cmd=nothing
+			%>
+			<!--
+			<li><a href="../04_product/11.asp?div=1">신용카드조회기(유선)</a></li>
             <li><a href="../04_product/11.asp?div=2">신용카드조회기(무선)</a></li>
             <li><a href="../04_product/11.asp?div=3">POS 장비</a></li>
             <li><a href="../04_product/11.asp?div=4">멀티패드</a></li>
             <li><a href="../04_product/11.asp?div=5">서명패드</a></li>
             <li><a href="../04_product/11.asp?div=6">기타장비</a></li>
+			-->
         </ul>
     </div>
     <div class="second"><a class="depth" style="cursor:pointer"></a>
@@ -101,7 +131,7 @@
     </div>-->
 
 
-	<% for i=1 to 6 %>
+	<% for i=1 to num %>
     <div class="third"><a class="depth" style="cursor:pointer"></a>
         <ul>
 

@@ -15,7 +15,6 @@
 		div=1
 	end if
 
-
 	idx=request("idx")
 
 	if idx="" or isnumeric(idx)=false then
@@ -65,26 +64,43 @@
 
 
 <%
-	select case div
-		case 1
-			product_en="Credit Card Checker(Wired)"
-			product_kr="신용카드조회기(유선)"
-		case 2
-			product_en="Credit Card Checker(Wireless)"
-			product_kr="신용카드조회기(무선)"
-		case 3
-			product_en="POS"
-			product_kr="POS 장비"
-		case 4
-			product_en="MultiPad"
-			product_kr="멀티패드"
-		case 5
-			product_en="SignaturePad"
-			product_kr="서명패드"
-		case 6
-			product_en="Others"
-			product_kr="기타장비"
-	end select
+	sql="select"
+	sql=sql & "		idx, c_category, c_order "
+	sql=sql & " from nc_category where idx = ? "
+
+	set cmd=server.createobject("adodb.command")
+	cmd.activeconnection=lo_DbCon
+	cmd.commandtext=sql
+	cmd.commandtype=adCmdText
+	cmd.prepared=true
+	cmd.parameters.append cmd.createparameter("@idx",adInteger,adParamInput,1,div)
+
+	set rs=cmd.execute
+		if not rs.eof or rs.bof then
+			product_kr=rs("c_category")
+	
+	'select case div
+	'	case 1
+	'		product_en="Credit Card Checker(Wired)"
+	'		product_kr="신용카드조회기(유선)"
+	'	case 2
+	'		product_en="Credit Card Checker(Wireless)"
+	'		product_kr="신용카드조회기(무선)"
+	'	case 3
+	'		product_en="POS"
+	'		product_kr="POS 장비"
+	'	case 4
+	'		product_en="MultiPad"
+	'		product_kr="멀티패드"
+	'	case 5
+	'		product_en="SignaturePad"
+	'		product_kr="서명패드"
+	'	case 6
+	'		product_en="Others"
+	'		product_kr="기타장비"
+	'end select
+		end if
+	set rs=nothing
 %>
 
 

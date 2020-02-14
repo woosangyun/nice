@@ -12,7 +12,7 @@
 
 <%
 	if div<>"" then
-		d_sql=" and p_div= ? "
+		d_sql=" and p_div2= ? "
 	end if
 %>
 
@@ -102,12 +102,42 @@
 																<td colspan="5" valign="top" height="25">
 					<select id="div" name="div" class="select_01" onchange="select_div(this.value)">
 						<option value="">:::제품분류선택:::</option>
+						<%
+							Dim num : num = 0
+							sql="select"
+							sql=sql & "		idx, c_category, c_order"
+							sql=sql & " from nc_category order by c_order asc "
+
+							set cmd=server.createobject("adodb.command")
+							cmd.activeconnection=lo_DbCon
+							cmd.commandtext=sql
+							cmd.commandtype=adCmdText
+							cmd.prepared=true
+
+							set rs=cmd.execute
+								if not rs.eof or rs.bof then
+									do until rs.eof
+									idx=rs("idx")
+									c_category=rs("c_category")
+									c_order=rs("c_order")
+						%>
+						<option value="<%=c_category%>" <%If div=c_category Then : response.write "selected" End If%>>→ <%=c_category%></option>
+						<!--
 						<option value="1" <%If div="1" Then : response.write "selected" End If%>>→ 신용카드조회기(유선)</option>
 						<option value="2" <%If div="2" Then : response.write "selected" End If%>>→ 신용카드조회기(무선)</option>
 						<option value="3" <%If div="3" Then : response.write "selected" End If%>>→ POS 장비</option>
 						<option value="4" <%If div="4" Then : response.write "selected" End If%>>→ 멀티패드</option>
 						<option value="5" <%If div="5" Then : response.write "selected" End If%>>→ 서명패드</option>
 						<option value="6" <%If div="6" Then : response.write "selected" End If%>>→ 기타장비</option>
+						-->
+						<%
+										num=num-1
+										rs.movenext
+									loop
+								end if
+							set rs=nothing
+							set cmd=nothing
+						%>
 					</select>
 																</td>
 															</tr>
@@ -128,7 +158,7 @@
 <%
 						sql="select"
 						sql=sql & "		idx, p_div, p_title, p_file_idx, p_file_name, p_certify"
-						sql=sql & " ,	(select x_file from nc_file where idx=a.p_file_idx) as x_file"
+						sql=sql & " ,	(select x_file from nc_file where idx=a.p_file_idx) as x_file, p_div2"
 						sql=sql & " from nc_product2 a"
 						sql=sql & " where p_display>0"
 						sql=sql & d_sql
@@ -178,6 +208,7 @@
 									p_file_name=rs("p_file_name")
 									p_certify=rs("p_certify")
 									x_file=rs("x_file")
+									p_div2=rs("p_div2")
 
 									select case p_div
 										case "1"	: div_str="카드조회(유선)"
@@ -213,7 +244,7 @@
 		</div>
 	</td>
 	<td width="150">
-		<a href="<%= gb %>_view.asp<%= p_cmd %><%= g_cmd %><%= d_cmd %><%= s_cmd %>&idx=<%= idx %>"><%= div_str %></a>
+		<a href="<%= gb %>_view.asp<%= p_cmd %><%= g_cmd %><%= d_cmd %><%= s_cmd %>&idx=<%= idx %>"><%= p_div2 %></a>
 	</td>
 	<td width="205"> 
 		<a href="<%= gb %>_view.asp<%= p_cmd %><%= g_cmd %><%= d_cmd %><%= s_cmd %>&idx=<%= idx %>"><%= p_title %></a>

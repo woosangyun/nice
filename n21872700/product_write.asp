@@ -41,7 +41,7 @@
 
 
 		sql="select"
-		sql=sql & "		p_div, p_title, p_file_idx, p_file_name, p_content, p_comment, p_link, p_certify, p_order"
+		sql=sql & "		p_div, p_title, p_file_idx, p_file_name, p_content, p_comment, p_link, p_certify, p_order, p_div2"
 		sql=sql & " from nc_product"
 		sql=sql & " where p_display>0"
 		sql=sql & "	and idx= ? "
@@ -66,6 +66,7 @@
 				p_link=rs("p_link")
 				p_certify=rs("p_certify")
 				p_order=rs("p_order")
+				p_div2=rs("p_div2")
 
 				p_title=replace(p_title,chr(34),"&quot;")
 			end if
@@ -167,13 +168,46 @@
 				<td width="504" height="27" class="space"> 
 					<select id="p_div" name="p_div" class="select_01">
 						<option value="">:::제품분류선택:::</option>
+						<%
+							Dim num : num = 0
+							sql="select"
+							sql=sql & "		idx, c_category, c_order"
+							sql=sql & " from nc_category order by c_order asc "
+
+							set cmd=server.createobject("adodb.command")
+							cmd.activeconnection=lo_DbCon
+							cmd.commandtext=sql
+							cmd.commandtype=adCmdText
+							cmd.prepared=true
+
+							set rs=cmd.execute
+								if not rs.eof or rs.bof then
+									do until rs.eof
+									idx=rs("idx")
+									c_category=rs("c_category")
+									c_order=rs("c_order")
+						%>
+						<option value="<%=c_category%>" <%If p_div2=c_category Then : response.write "selected" End If%>>→ <%=c_category%></option>
+						<!--
 						<option value="1" <%If p_div="1" Then : response.write "selected" End If%>>→ 신용카드조회기(유선)</option>
 						<option value="2" <%If p_div="2" Then : response.write "selected" End If%>>→ 신용카드조회기(무선)</option>
 						<option value="3" <%If p_div="3" Then : response.write "selected" End If%>>→ POS 장비</option>
 						<option value="4" <%If p_div="4" Then : response.write "selected" End If%>>→ 멀티패드</option>
 						<option value="5" <%If p_div="5" Then : response.write "selected" End If%>>→ 서명패드</option>
 						<option value="6" <%If p_div="6" Then : response.write "selected" End If%>>→ 기타장비</option>
+						-->
+						<%
+										num=num-1
+										rs.movenext
+									loop
+								end if
+						%>
 					</select>
+					<%=p_div%>
+					<%
+						set rs=nothing
+						set cmd=nothing		
+					%>
 				</td>
 			</tr>
 			<tr> 

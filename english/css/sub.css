@@ -1010,7 +1010,7 @@ body .mobile_only{display:none;}
 .productDetail:after{display:block; content:""; clear:both;}
 .productDetail .img{float:left; width:647px; height:558px; position:relative;}
 .productDetail .img p{ position:absolute; width:80px; height:80px; background:url(../images/product/badge.png) no-repeat; right:40px; top:40px; text-indent:-9999px;}
-.productDetail .productText{ float:left; width:430px; height:558px; border-left:1px solid #b3c2d0; background:#f2f2f2;}
+.productDetail .productText{ float:left; width:430px; min-height:558px; border-left:1px solid #b3c2d0; background:#f2f2f2;}
 .productDetail .productText .title{ font-size:24px; color:#111; margin-left:49px; margin-top:49px; font-weight:700;}
 .productDetail .productText ul{ margin-top:40px; margin-left:49px;}
 .productDetail .productText ul li{ font-size:20px; font-weight:700; color:#111; line-height:28px;padding-left:13px; background:url(../images/product/bu_list1.png) left 11px no-repeat;}
