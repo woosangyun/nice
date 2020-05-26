@@ -117,7 +117,8 @@
                         </ul>
                     </li>
 					<% next %>
-
+                        
+                    <li class="sub"><a href="http://www.direct.nicevan.co.kr" target="_blank">제품구매 문의</a></li>
 				</ul>
             </div>
         </li>
